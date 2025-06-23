@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmarker | Bookmark your favorite sites</title>
+    <link rel="icon" href="./images/favicon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Acme&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Acme&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <section class="py-5">
+      <div class="container">
+        <h1
+          class="text-white text-center py-3 px-5 rounded-pill border border-3 fw-bolder m-auto"
+        >
+          <span>Nice Bookmarker <img src="./images/logo-2.png" alt="" /></span>
+        </h1>
+        <div class="form-box mt-5 py-5">
+          <h2 class="text-white text-center fs-4">
+            <i class="fa-regular fa-bookmark"></i> Bookmark your favorite sites
+            <i class="fa-regular fa-bookmark"></i>
+          </h2>
+          <hr class="mt-5 mb-0" />
+          <div class="row">
+            <div class="col-12">
+              <div class="inner mt-5 w-75 mx-auto">
+                <label for="site-name" class="mb-2 text-white fw-bolder fs-5">
+                  <i class="fa-solid fa-book-bookmark me-2"></i> SiteName
+                </label>
+
+                <div id="siteNameBox" class="position-relative">
+                  <input
+                    type="text"
+                    id="site-name"
+                    class="form-control m-auto"
+                    maxlength="20"
+                  />
+                  <span
+                    id="isvalidName"
+                    class="validation-span position-absolute d-flex justify-content-center align-items-center fw-bolder rounded-circle"
+                  ></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <div class="inner mt-4 w-75 mx-auto">
+                <label for="site-url" class="mb-2 text-white fw-bolder fs-5"
+                  ><i class="fa-solid fa-link me-2"></i> Site URL</label
+                >
+                <div class="position-relative">
+                  <input
+                    type="text"
+                    id="site-url"
+                    class="url-input form-control m-auto"
+                  />
+                  <span id="isvalidURL" class="validation-span position-absolute d-flex justify-content-center align-items-center fw-bolder rounded-circle"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            id="addButton"
+            onclick="addBookmark()"
+            class="btn d-block mt-5 px-5 py-2 fs-5 mx-auto fw-medium"
+          >
+            +New Bookmark
+          </button>
+          <button
+            id="updateButton"
+            onclick="updateBookmark()"
+            class="btn d-none btn-primary mt-5 px-5 py-2 fs-5 mx-auto fw-medium"
+          >
+            Update Bookmark
+          </button>
+          <hr class="mt-5 mb-0" />
+        </div>
+
+        <div class="row mb-5">
+          <div class="col">
+            <div class="inner search-main-box d-flex align-items-center w-75 m-auto">
+              <div
+                class="search-input-box border-end border-3 border-white pe-3 me-3 w-100"
+              >
+                <input
+                  type="search"
+                  class="search-input form-control hide"
+                  name="search-value"
+                  id="searchInput"
+                  placeholder="Search..."
+                  oninput="search()"
+                />
+              </div>
+              <span
+              id="searchIcon"
+                class="search-icon text-white fs-4"
+                onclick="searchIcon()"
+              >
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div id="sitesRow" class="row inner g-4 my-5 w-75 m-auto"></div>
+
+        <div
+          class="clear-all-bookmarks inner w-75 m-auto d-flex justify-content-between align-items-center"
+        >
+          <h6 class="text-white fs-5 fw-bold m-0">
+            All Bookmarks: <span id="bookmarksCount"></span>
+          </h6>
+          <button
+          id="deleteAllBtn"
+            class="py-2 px-3 border-0 rounded bg-danger text-white fw-medium"
+            onclick="resetAllBookmarks()"
+          >
+            Delete All
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/sweetalert.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
